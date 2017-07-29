@@ -3,6 +3,8 @@
 It can scrape things for you and stitch them for you too.
 
 To install: `pip install -r requirements.txt`
+It needs `python 3.6`.
+
 
 Make a geojson containing `Polygon` outlines of areas you want to scrape
 
