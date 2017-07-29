@@ -1,0 +1,4 @@
+aiohttp==2.2.3
+Pillow==3.3.0
+Shapely==1.5.17
+tqdm==4.14.0

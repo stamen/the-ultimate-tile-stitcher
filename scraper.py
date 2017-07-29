@@ -4,7 +4,6 @@ import shapely.geometry
 import asyncio
 import aiohttp
 import json
-from ast import literal_eval
 from random import random
 
 from utils import tile2latlon, latlon2tile
