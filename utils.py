@@ -1,5 +1,6 @@
 import math
 
+# from OSM Slippy Tile definitions & https://github.com/Caged/tile-stitch
 def latlon2tile(lat, lon, zoom):
     lat_radians = lat * math.pi / 180.0
     n = 1 << zoom
