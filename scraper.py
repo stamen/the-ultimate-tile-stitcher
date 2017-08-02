@@ -32,8 +32,12 @@ def tile_idxs_in_poly(poly : shapely.geometry.Polygon, zoom : int):
     (min_x, max_y), (max_x, min_y) = latlon2tile(min_lat, min_lon, zoom), latlon2tile(max_lat, max_lon, zoom)
     for x in range(int(min_x), int(max_x) + 1):
         for y in range(int(min_y) , int(max_y) + 1):
-            pt = shapely.geometry.Point(tile2latlon(x, y, zoom)[::-1]) # poly is defined in geojson form
-            if pt.within(poly):
+            nw_pt = tile2latlon(x, y, zoom)[::-1] # poly is defined in geojson form
+            ne_pt = tile2latlon(x + 1, y, zoom)[::-1] # poly is defined in geojson form
+            sw_pt = tile2latlon(x, y + 1, zoom)[::-1] # poly is defined in geojson form
+            se_pt = tile2latlon(x + 1, y + 1, zoom)[::-1] # poly is defined in geojson form
+            if any(map(lambda pt : shapely.geometry.Point(pt).within(poly), 
+                (nw_pt, ne_pt, sw_pt, se_pt))):
                 yield x, y
             else:
                 continue
