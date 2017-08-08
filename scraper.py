@@ -100,4 +100,4 @@ if __name__ == '__main__':
     failed_urls = loop.run_until_complete(main())
     if len(failed_urls) > 0:
         with open('failed_urls.txt', 'w') as fp:
-            fp.writelines(failed_urls)
+            fp.writelines((url + '\n' for url in failed_urls))
