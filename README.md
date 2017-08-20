@@ -2,6 +2,8 @@
 
 It can scrape things for you and stitch them for you too.
 
+If you're on windows, run `conda install -c conda-forge shapely`
+
 To install: `pip3 install -r requirements.txt`
 It needs `python 3.6`.
 
