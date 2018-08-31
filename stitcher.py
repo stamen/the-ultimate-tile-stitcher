@@ -43,7 +43,7 @@ def main():
 
     print('output image size:', out_w, out_h, 'tile size:', tile_w, tile_h)
 
-    out_img = Image.new('RGB', (out_w, out_h), (0, 0, 255))
+    out_img = Image.new('RGBA', (out_w, out_h), (0, 0, 255, 0))
     for filepath in tqdm.tqdm(filepaths):
         x, y = xy(filepath)
         x, y = x - x_0, y - y_0
