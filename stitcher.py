@@ -37,7 +37,7 @@ def main():
     x_0, y_0 = min(map(lambda x_y : x_y[0], xys)), min(map(lambda x_y: x_y[1], xys))
     x_1, y_1 = max(map(lambda x_y : x_y[0], xys)), max(map(lambda x_y: x_y[1], xys))
 
-    n_x, n_y = x_1 - x_0, y_1 - y_0
+    n_x, n_y = (x_1 + 1) - x_0, (y_1 + 1) - y_0
 
     out_w, out_h = n_x * tile_w, n_y * tile_h
 
